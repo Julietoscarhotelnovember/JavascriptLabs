@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+alert('1번 GO');
+function print(){
+	//dom
+	var element=document.getElementById("demo");
+	console.log(element);
+	element.innerHTML = "HELLO WORLD"; //p태그 안쪽에 html 태그를 끼워넣겠다 
+}
+</script>
+</head>
+<body>
+	2번 바디 영역 화면에 출력<br>
+	<button onclick="print()">클릭하세요</button>
+	<p id="demo">난 문단태그임</p>
+	<script type="text/javascript">
+		alert('3번 경고창');
+	</script>
+	<!-- KEY POINT! name과 id는 뭔 차이?
+		<input type="text name="userid" id="userid">
+		1. name은 서버로 값 전송할 때 (ex: ok.jsp?userid=kglim...)
+		2. id는 클라이언트단(js, css)에서 이용할 때 (유효성 검증, 조작 시 식별자)
+	 -->
+</body>
+</html>

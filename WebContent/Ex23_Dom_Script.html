@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>동적태그 생성</title>
+<script type="text/javascript">
+window.onload=function(){
+	var pEle=document.createElement("p");
+	var hrEle=document.createElement("hr");
+	var h3Ele=document.createElement("h3");
+	var TextNode=document.createTextNode("hello world");
+	var divEle=document.createElement("div");
+	var TextNode2=document.createTextNode("hey hey hey");
+	
+	//<hr title="수평선">
+	hrEle.setAttribute("title", "수평선");
+	
+	//<h3>hello world</h3>
+	h3Ele.appendChild(TextNode);
+	
+	//<div>hey hey hey</div>
+	divEle.appendChild(TextNode2);
+	
+	//body요소에 추가
+	document.body.appendChild(pEle).appendChild(divEle);
+	//<body><p><div>hey hey hey</div></p></body>
+	
+	//<body><p><div>hey hey hey</div></p><hr title="수평선"></body>
+	document.body.appendChild(hrEle)
+		
+	//<body><p><div>hey hey hey</div></p><hr title="수평선"><h3>hello world</h3></body>
+	document.body.appendChild(h3Ele)
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+	var name ="";
+	var email=false;
+	//전역자원 name, email
+	function Initvalue(frm){
+		name = frm.username.value;
+		email= frm.checkmail.checked;
+	}
+	function CopySend(frm){
+		console.log(frm)
+		//console.log(frm.username.value);
+		//console.log(frm.copy.checked); true , false
+		if(frm.copy.checked){ //속성의 사용 : 배송지 와 주문자 정보 동일
+			Initvalue(frm);
+			frm.copyname.value = name;
+			frm.copykmail.checked = email;
+		}else{
+			alert("선택해지!");
+			frm.copyname.value = "";
+			frm.copykmail.checked = false;
+		}
+	}
+	</script>
+</head>
+<body>
+<form>
+		<fieldset>
+			<legend>주문정보</legend>
+			이름:<input type="text" name="username"><br>
+			<input type="checkbox" name="checkmail">배송정보 Email수신<br>
+			<hr>	
+			<input type="checkbox" name="copy" onclick="CopySend(this.form)">주문자 정보와 배송지 정보 동일
+		</fieldset>
+		<hr>
+		<fieldset>
+			<legend>배송지 정보</legend>
+				이름:<input type="text" name="copyname"><br>
+				    <input type="checkbox" name="copykmail">배송정보 Email수신
+		</fieldset>
+	</form>
+</body>
+</html>

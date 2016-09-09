@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM</title>
+<script type="text/javascript">
+	//document.getElementById(elementId) > 단일값
+	//document.getElementsByName(elementName) > name속성으로 배열반환 > 주로 체크박스, 라디오, 셀렉트
+	//document.getElementsByTagName(tagname) > p or li 같은 것 > 배열 반환
+	function getEleName() {
+		var RadioEles=document.getElementsByName("hobby");
+		//console.log(RadioEles);
+		for (var i=0; i<RadioEles.length; i++) {
+			alert(RadioEles[i].getAttribute("value")+'\n'
+				  +RadioEles[i].innerText); //이건 못가져옴 <>요기 들은게 아니라서</>
+		}
+	}
+	function getEleTagName() {
+		var liTags=document.getElementsByTagName("li");
+		//console.log(liTags);
+		for (var i=0; i<liTags.length; i++) {
+			alert(liTags[i].getAttribute("value")+"/"+liTags[i].innerText);
+			//이건 가져옴 <>요기 들어서</>
+		}
+	}
+	//window.onload 이벤트에 함수를 사용해서 RadioBtn에 onmouseover이벤트
+	//이벤트 안에서 hobby태그를 가져와서
+	//선택된(체크된) 것의 value값만 alert창으로 출력
+	window.onload=function() { //로딩후 실행하기 위해서
+		var btn=document.getElementById("RadioBtn");
+		btn.onmouseover=function(){
+			var RadioEles=document.getElementsByName("hobby");
+			for(var i=0; i<RadioEles.length; i++) {
+				if(RadioEles[i].checked==true){
+					alert("checked: "+RadioEles[i].getAttribute("value"));
+				}	
+			}
+			
+		}
+	}
+</script>
+</head>
+<body>
+	<ul>
+		<li value="0">javascript</li>
+		<li value="1">dom</li>
+		<li value="2">jquery</li>
+	</ul>
+	<ul>
+		<li value="aaaa">hi</li>
+		<li value="bbbb">hello</li>
+	</ul>
+	<input type="radio" name="hobby" value="B" checked>야구<br>
+	<input type="radio" name="hobby" value="S" >축구<br>
+	<input type="radio" name="hobby" value="T" >테니스<br>
+	<hr>
+	<input type="button" value="Radioname" onclick="getEleName()"><br>
+	<input type="button" value="Radioname2" id="RadioBtn"><br>
+	<input type="button" value="Tagname" onclick="getEleTagName()"><br>
+</body>
+</html>

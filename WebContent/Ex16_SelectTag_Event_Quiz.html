@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		function evtProductor(frm) {
+			//console.log(frm);
+			//console.log(frm.productor.value); //가장 간단한 방법
+			
+			//console.log("index: "+frm.productor.selectedIndex);
+			//선택된 배열(option태그)의 index값을 얻을 수 있다
+			
+			//전체 목록(배열)
+			//console.log(frm.productor.options[0].value); //제조사
+			//console.log(frm.productor.options[0].text); 
+			
+			console.log(frm.productor.options[frm.productor.selectedIndex].value);
+			console.log(frm.productor.options[frm.productor.selectedIndex].text);
+			
+			//제조사 제외하고 뿌리기
+			if (frm.productor.selectedIndex==0) {
+				document.frmdata.valProductor.value="";
+				document.frmdata.txtProductor.value="";
+			} else {
+				document.frmdata.valProductor.value=frm.productor.options[frm.productor.selectedIndex].value;
+				document.frmdata.txtProductor.value=frm.productor.options[frm.productor.selectedIndex].text;
+			}
+		}
+		function evtBrand(frm) {
+			if (frm.brand.selectedIndex==0) {
+				document.frmdata.valBrand.value="";
+				document.frmdata.txtBrand.value="";
+			} else {
+				document.frmdata.valBrand.value=frm.brand.options[frm.brand.selectedIndex].value;
+				document.frmdata.txtBrand.value=frm.brand.options[frm.brand.selectedIndex].text;
+			}
+		}
+	</script>
+</head>
+<body>
+	모델별 최저가 검색<br>
+	<form name="frmdata">
+			<select name="productor"  style="width: 200px" onchange="evtProductor(this.form)">
+				<option value="A000" selected>제조사</option>
+				<option value="A001">삼성전자</option>
+				<option value="A002">LG전자</option>
+				<option value="A003">Apple</option>
+				<option value="A004">Dell</option>
+			</select>
+		    <input type="text" name="valProductor" size="10">
+		    <input type="text" name="txtProductor" size="10">
+		    <br>
+	      
+		    <select name="brand" width="200px" onchange="evtBrand(this.form)">
+		        <option value="B000" SELECTED>브랜드</option>
+		        <option value="B001">센스</option>
+		        <option value="B002">X-Note</option>
+		        <option value="B003">MAC</option>
+		        <option value="B004">VAIO</option>
+		    </select>
+			    <input type="text" name="valBrand" size="10">
+			    <input type="text" name="txtBrand" size="10">
+	</form>
+</body>
+</html>

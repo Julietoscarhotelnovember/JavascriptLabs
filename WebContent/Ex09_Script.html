@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>자바스크립트 유효성 검증</title>
+<script type="text/javascript">
+	function send() {
+		//유효성 검증
+		//1.txtuserid 값이 입력되었는지 아닌지 판단
+		//document.forms[0].elements[0].value
+		var userid=document.loginform.txtuserid; //input 태그 통으로 가져옴
+		console.log(userid.value);
+		var userpwd=document.loginform.txtpwd;
+		console.log(userpwd.value);
+		
+		//검증
+		if(userid.value==""||!(userid.value.length>=3 && userid.value.length<=10)) {
+			alert("다시 입력하세요");
+			document.loginform.txtuserid.focus();
+			userid.select();
+		} else {
+			//검증됨 > form 태그 자체에 submit함수 내장되어 있다
+			//만약 form의 action이 없다면
+			//document.loginform.action="Ex09_login.jsp";
+			document.loginform.submit();
+		}
+	}
+</script>
+</head>
+<body>
+<form action="Ex09_login.jsp" method="get" name="loginform">
+	ID: <input type="text" name="txtuserid"><br>
+	PWD: <input type="password" name="txtpwd"><br>
+	<!-- <input type="submit" value="전송하기"> -->
+	<!-- <input type="image" src="images/button.jpg"> -->
+	<input type="button" value="전송" onclick="send()">
+</form>
+
+</body>
+</html>

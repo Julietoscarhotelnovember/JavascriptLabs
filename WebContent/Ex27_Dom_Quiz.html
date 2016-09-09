@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>이미지 슬라이드</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var myphotos=Array("images/5.jpg",
+							   "images/6.jpg",
+							   "images/7.jpg",
+							   "images/8.jpg");
+			//id prv에 onclick 이벤트 처리
+			//id next에 onclick 이벤트 처리
+			//순회
+			var index=0;
+			
+			var next=document.getElementById("next");
+			next.onclick=function(){
+				if (index>=3) {
+					index=-1;
+				} else {
+					
+				}
+				document.getElementById("imgs").setAttribute("src", myphotos[index+1]);
+				index=index+1;
+			}
+			
+			var prv=document.getElementById("prv");
+			prv.onclick=function(){
+				if (index<=0) {
+					index=4;
+				} else {
+				
+				}
+				document.getElementById("imgs").setAttribute("src", myphotos[index-1]);
+				index=index-1;
+			}
+		}
+	</script>
+</head>
+<body>
+	<h3>DOM 슬라이드</h3>
+	<img src="images/5.jpg" id="imgs" width="200" height="200" alt="이미지">
+	<hr>
+	<a href="#" id="prv">이전</a>||<a href="#" id="next">다음</a>
+</body>
+</html>

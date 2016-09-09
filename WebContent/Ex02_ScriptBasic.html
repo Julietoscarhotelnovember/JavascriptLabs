@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>내장객체(웹브라우저) 사용하기</title>
+<script type="text/javascript">
+	//동적으로 화면 변경
+	window.document.write("출력하기<br>");
+	document.write("window 객체 생략 가능<br>");
+	document.write("<br><b>hello</b><br>");
+	document.write('<table border="1">');
+	document.write('<tr><td>잠이온다...</td></tr>');
+	document.write('</table>');
+	
+	//검증(디버깅)
+	console.log("결과값 확인");
+	console.log(100+100);
+	
+	/* var element = window.document.forms[0].elements[0]; // 폼/태그를 여러개 만들면 배열로 잡힌다
+	// 태그 요소 전체를 들고 온다
+	console.log(element); //이렇게 하면 에러 > 순서 때문에 */
+	
+</script>
+</head>
+<body>
+
+	<form action="#" method="get" name="myform">
+		ID:<input type="text" name="username" value="kglim"><br>
+		PWD:<input type="password" name="pwd"><br>
+		<input type="submit" value="클릭">
+	</form>
+	<hr>
+	
+	<div style="background-color:gold;width:200px;height:150px;"
+		onmouseover="this.style.backgroundColor='gray'"
+		onmouseout="this.style.backgroundColor='gold'">
+		현재 자바스크립트 수업 중 입니다.
+	</div>
+	
+	<script type="text/javascript">
+		var element = window.document.forms[0].elements[0];
+		console.log(element);
+		console.log(element.value);
+		console.log(element.value.length);
+		
+		//태그가 name속성이 있다면
+		//window.document.폼이름.요소이름
+		var ele = document.myform.username; //인풋태그 전체
+		var value = document.myform.username.value;
+		console.log("input태그: "+ele);
+		console.log("userid value: "+value);
+		
+		/* if(value.length<10){
+			alert("id 다시 입력");
+			ele.value="";
+		} */
+		
+		
+	</script>
+	
+</body>
+</html>

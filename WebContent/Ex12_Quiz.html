@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+
+<!--
+서버로 데이터 전송 시 제목과 내용 둘 중 하나라도 입력이 되지 않으면
+서버로 전송되지 않도록 만들기, 둘다 입력되면 서버로 전송
+-->
+<script type="text/javascript">
+function DataCheck() {
+	if((document.myform.title.value != "") && (document.myform.content.value != "")) {
+		return true;
+	} else {
+		alert("넌 모찌나간다!");
+		return false; 
+	}
+			
+}
+
+
+</script>
+</head>
+<body>
+	<form action="Ex12_Quiz.jsp" method="get" name="myform">
+		제목: <input type="text" name="title"><br>
+		작성자: kglim<br>
+		내용: <textarea rows="10" cols="10" name="content"></textarea>
+		<br>
+		<input type="submit" value="서버전송" onclick="return DataCheck()">
+		<!-- submit을 중지시켜야됨return -->
+	</form>
+</body>
+</html>

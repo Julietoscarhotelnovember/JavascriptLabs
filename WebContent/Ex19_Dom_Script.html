@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>DOM</title>
+<script type="text/javascript">
+	//onload는 body 로딩 후에 호출된다
+	//<body onload="call()">
+	//window.onload=call()
+	window.onload=function(){		
+		var out="";
+		out+="<ul>";
+			out+="<li>javascript</li>";
+			out+="<li>jquery</li>";
+			out+="<li>css</li>";
+		out+="</ul>";
+		document.body.innerHTML=out; //body 안에 overwrite
+		
+		var header=document.createElement("h1");
+		var textnode=document.createTextNode("hello");
+		header.appendChild(textnode); //<h1>hello</h1>
+		document.body.appendChild(header);
+		
+		//img태그 생성 후 src 속성 만들고 body에 추가
+		var img=document.createElement("img");
+		img.setAttribute('src', 'images/1.png'); //마찬가지로 width, height 주면 됨
+		document.body.appendChild(img);
+		
+	}
+</script>
+</head>
+<body>
+	hello world
+</body>
+</html>

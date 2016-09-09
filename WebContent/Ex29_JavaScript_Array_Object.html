@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Array 객체 다루기</title>
+<script type="text/javascript">
+	//[배열표기]
+	//{객체표기}
+	
+	var students=[];
+	console.log(students);
+	
+	//배열에 객체 추가
+	students.push({이름:'홍길동', 국어점수:80, 영어점수:50}); //자바의 add와 비슷
+	students.push({이름:'암우개', 국어점수:70, 영어점수:90});
+	students.push({이름:'에취', 국어점수:10, 영어점수:100});
+	
+	for (var index in students) {
+		students[index].getsum=function(){return this.국어점수+this.영어점수;}
+		students[index].getavg=function(){return this.getsum()/2}
+	}
+	console.log(students);
+	
+	//문제
+	//students 배열에 담겨있는 학생의 이름, 총점, 평균 출력하기
+	for (var index in students) {
+		console.log(students[index].이름+" / "+students[index].getsum()
+				+" / "+students[index].getavg());
+	}
+		
+</script>
+</head>
+<body>
+
+</body>
+</html>

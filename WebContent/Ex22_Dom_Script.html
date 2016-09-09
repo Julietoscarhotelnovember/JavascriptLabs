@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>DOM(node)</title>
+<script type="text/javascript">
+	window.onload=function(){
+		var myul=document.getElementById('myul');
+		console.log(myul);
+		var msg="";
+		msg+="노드명: "+myul.nodeName;
+		msg+="\n노드타입: "+myul.nodeType;
+		//요소가 노드, 태그이면 상수값 1 반환, 요소가 속성이면 2 반환, 요소가 텍스트면 3 반환 
+		msg+="\n노드값: "+myul.nodeValue;
+		msg+="\n자식노드 개수: "+myul.childNodes.length;
+		//alert(msg);
+		var childs=myul.childNodes;
+		console.log(childs);
+		for(var i=0;i<childs.length; i++) {
+			if(childs[i].nodeType==1) {
+				alert(childs[i].nodeName+"/"+childs[i].innerText+"/"+childs[i].nodeType);
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	<ul id="myul"><li>A</li><li>B</li><li>C</li></ul>
+</body>
+</html>

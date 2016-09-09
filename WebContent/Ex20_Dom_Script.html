@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>DOM 제어하기</title>
+	<script type="text/javascript">
+		//주의사항
+		window.onload=btnChange; //이벤트에 함수를 바로 적용할 때는 괄호를 붙이지 않는다
+		function btnChange() {
+			var btnobj=document.getElementById("btnchange");
+			console.log(btnobj);
+			btnobj.onmouseover=function() {
+				var divobj=document.getElementById("myDiv");
+				divobj.style.backgroundColor="gold";
+			}
+			//onmouseout 이벤트 처리
+			btnobj.onmouseout=function() {
+				var divobj=document.getElementById("myDiv");
+				divobj.style.backgroundColor="white";
+			}
+			//btnchange를 클릭하면 span태그의 text 내용을 alert 창으로 출력하기
+			btnobj.onclick=function() {
+				var msg=document.getElementById("str");
+				alert(msg.innerHTML);
+			}
+		}
+		
+		//권장하지 않는 방식-다이렉트로 거는 방식, 위에 방법을 써라
+		function displayCall() {
+			var mydiv=document.getElementById("myDiv");
+			mydiv.style.backgroundColor="red";
+		}
+	</script>
+</head>
+<body>
+	<form action="">
+		<div id="myDiv" style="height:100px">
+			<span id="str">hello</span>
+		</div>
+		<input type="button" value="버튼1" id="btnchange"><br>
+		<input type="button" value="버튼2" onclick="displayCall()">
+	
+	</form>
+
+</body>
+</html>

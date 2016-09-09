@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JavaScript</title>
+<script type="text/javascript">
+/* 
+자바스크립트: 웹브라우저(parser)가 해석, 라인 단위로 해석(순서)
+객체지향언어: 내부적으로 클래스 개념이 존재
+html contents, attribue
+css contents의 코드 제어
+유효성 검증(id, 주민번호 체크)
+동적 웹페이지 구성
+전세계적으로 가장 많이 쓰임
+
+자바스크립트 프레임워크/라이브러리: jquery, angular, node, jquery mobile
+단점: 종속
+
+문법: 대소문자 구분, 종결자, 연산자, 제어문, ...
+사용방법: css와 동일
+in-line 태그 안에 스크립트
+internal
+external
+ */
+
+ function call() {
+	alert("경고창");
+}
+ 
+</script>
+</head>
+<body>
+	<h3>자바스크립트</h3>
+	1. in-line:
+	<input type="button" value="눌러봐" onclick="alert('inline')">
+	2. internal:
+	<input type="button" value="page 삽입" onclick="call()">
+	3. external
+	<input type="button" value="외부파일" onclick="Fcall()">
+	<script type="text/javascript" src="common/common.js"></script>
+</body>
+</html>

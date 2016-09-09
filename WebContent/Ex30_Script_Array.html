@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JavaScript Array 활용하기</title>
+<script type="text/javascript">
+var array=['포도', '사과'];
+document.write(array.toString()+"<br>");
+document.write(array+" / "+array.length+"<br>");
+array[2]="바나나"; //동적추가, js는 Array가 정적+동적 모든 역할을 하는 것으로 보임
+document.write(array+" / "+array.length+"<br>");
+array[10]="애플망고"; //빈방이 만들어진다
+document.write(array+" / "+array.length+"<br>");
+
+//초기화 전에는 안나옴
+document.write(array[9]+"<br>");
+array[9]="A";
+document.write(array[9]+"<br>");
+
+//강제로 배열크기를 줄이면? 짤라 버림
+var array2=['one', 'two', 'three'];
+array2.length=2;
+
+//강제로 배열크기를 늘리기
+array2.length=4;
+
+//js배열에서는 push(), pop()을 활용할 수 있다 > stack자료구조
+array2.push("four"); //이렇게 하면 어디에 들어갈까? > 젤 뒤에
+document.write(array2);
+document.write(array2.pop());
+</script>
+</head>
+<body>
+
+</body>
+</html>

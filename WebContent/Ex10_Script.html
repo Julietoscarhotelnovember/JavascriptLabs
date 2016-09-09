@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>문자/숫자함수</title>
+<script type="text/javascript">
+	var str="10+20+10";
+	document.write(str+"<br>");
+	//1.eval()
+	//문자형 수식을 계산
+	//문자형 숫자 > 숫자
+	document.write("eval(): "+eval(str)+"<br>");
+	
+	//2.isNaN() > not a number > 괄호안 값이 문자면 true, 숫자면 false 리턴
+	document.write(isNaN("12345A")+"<br>");
+	document.write(isNaN("12345")+"<br>");
+	
+	//3.문자열 함수
+	//http://www.w3schools.com/js/js_string_methods.asp
+	
+	//4.Number() 문자 > 숫자 변환
+	//String() 숫자 > 문자 변환
+	var i="100";
+	var j="200";
+	document.write("결합: "+i+j)
+	document.write("<br>숫자변환: "+(Number(i)+Number(j)));
+	
+	//비슷한 기능을 하는 함수들이 많다
+	/*
+	Number()	Returns a number, converted from its argument.
+	parseFloat()	Parses its argument and returns a floating point number
+	parseInt()	Parses its argument and returns an integer
+	*/
+	
+	//많이 쓰는 event
+	/*
+	onchange	An HTML element has been changed
+	onclick	The user clicks an HTML element
+	onmouseover	The user moves the mouse over an HTML element
+	onmouseout	The user moves the mouse away from an HTML element
+	onkeydown	The user pushes a keyboard key
+	onload	The browser has finished loading the page 페이지 모두 로딩 후에 실행
+	*/
+	function myFunction() {
+		//onblur
+		//onfocus
+		var jumin=document.myform.jumin1;
+		if (isNaN(jumin.value)) {
+			alert("숫자만 입력하세요");
+			jumin.focus();
+			jumin.select();
+		}
+	}
+	function funcFocus() {
+		alert("앞자리 주민번호 \n 입력 잘 하셨네요.");
+	}
+	
+	
+	function ChangeColor(obj) {
+		console.log(obj);
+		obj.style.backgroundColor="gold";
+	}
+	function ChangeColor2(obj) {
+		console.log(obj);
+		obj.style.backgroundColor="white";
+	}
+	function selectTag() {
+		alert(document.myform.sel.value);
+	}
+	
+	
+</script>
+</head>
+<body onload="alert('page load')">
+	<form action="" name="myform"> <!-- onblur/onfocus는 단짝 -->
+		<hr>
+		<input type="text" name="jumin1" maxlength=3 onblur="myFunction()">
+		-
+		<input type="text" name="jumin2" maxlength=4 onfocus="funcFocus()">
+		<hr>
+		
+		<select name="sel" onchange="selectTag()">
+		<option value="A">A</option>
+		<option value="B">B</option>
+		<option value="C">C</option>
+	</select>
+	</form>
+	
+	<input type="text" onmouseover="ChangeColor(this)" onmouseout="ChangeColor2(this)">
+	<!-- this로 넘기면 전체를 통으로 받는다 -->
+	
+	<input type="text" onkeypress="alert('눌럿군')">
+	<hr>
+
+</body>
+</html>

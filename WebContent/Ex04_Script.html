@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Javascript 문법</title>
+<script type="text/javascript">
+//변수 생성 가능, 유연하다
+//var > 타입은 변수에 값이 할당될 때 타입이 결정된다
+//String, Number, Boolean, Array, Object
+/* var length = 16;                               // Number
+var lastName = "Johnson";                      // String
+var cars = ["Saab", "Volvo", "BMW"];           // Array
+var x = {firstName:"John", lastName:"Doe"};    // Object */
+
+var a;
+a=100; //타입 결정
+console.log("a값: "+a);
+
+var i, j;
+i=100;
+j=200;
+var result = i+j;
+
+var intnum=100;
+var dnum=12.345; //실수타입
+var flag=true;
+var str=null;//값이 없다
+var str2="ABC";
+
+var num1=10;
+var num2=3;
+document.write(num1/num2+"<br>");
+document.write(num1%num2+"<br>");
+
+//관계연산 ==, !=, ....
+var a=3;
+var b=5;
+document.write((a==b)+"<br>");
+document.write((a!=b)+"<br>");
+
+//논리(&&, ||)
+document.write((10>5)&&(1!=3)+"<br>");
+document.write((10>5)||(1!=3)+"<br>");
+
+//삼항연산자
+var result = (4%2 == 0) ? "짝수":"홀수";
+document.write(result+"<br>");
+
+//대입 연산자(+=, -+, ...)
+var p=10;
+var k=5;
+p+=k;
+document.write("결과: "+p);
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
