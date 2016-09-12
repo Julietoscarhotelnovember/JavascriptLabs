@@ -20,15 +20,12 @@
 			for (var j=0; j<intCol; j++) {
 				if (i==0) {
 					var eCell=document.createElement("th");
-					var eText=document.createTextNode((j+1)+"열");
-					eCell.appendChild(eText);
-					elerow.appendChild(eCell);
 				} else {
 					var eCell=document.createElement("td");
-					var eText=document.createTextNode((j+1)+"열");
-					eCell.appendChild(eText);
-					elerow.appendChild(eCell);
 				}
+				var eText=document.createTextNode((j+1)+"열");
+				eCell.appendChild(eText);
+				elerow.appendChild(eCell);
 			}
 			eletable.appendChild(elerow);
 		}
